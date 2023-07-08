@@ -1,13 +1,21 @@
 package Animals;
 
-public class PackAnimal extends Animal{
+public abstract class PackAnimal extends Animal{
 
-    public PackAnimal(String name, String command) {
-        super(name, command);
+    protected String breed;
+
+    protected PackAnimal(String name, String command, String type, String breed) {
+        super(name, command, "Вьючное животное");
+        this.breed = breed;
+    }
+
+
+    public String getBreed(){
+        return breed;
     }
 
     @Override
-    public String getType() {
-        return "Вьючное животное ";
+    public void executeCommand(String command) {
+        System.out.println("Это  " + type + breed + name + "знает команду  " + command);
     }
 }
