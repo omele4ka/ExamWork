@@ -5,16 +5,22 @@ public abstract class Animal {
     protected String command;
     protected String type;
 
-    public Animal(String name, String type) {
+    public abstract String getType();
+
+    public Animal(String name, String command) {
         this.name = name;
-        this.type = type;
+        this.command = command;
     }
 
     public String getName(){
         return name;
     }
 
+    public String getCommand(){
+        return command;
+    }
+
     public void executeCommand(String command){
-        System.out.println("Это  " + type + name + "умеет " + command);
+        System.out.println("Это  " + getType() + name + "умеет " + command);
     }
 }
