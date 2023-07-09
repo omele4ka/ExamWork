@@ -1,7 +1,18 @@
 package Animals;
 
-public class Dog extends PetAnimal{
-    protected Dog(String name, String command, String type, String breed) {
-        super(name, command, type, "Собака");
+public class Dog extends Animal{
+    public Dog(String name, String command, String type) {
+        super(name, command, "Домашнее животное");
+    }
+
+    @Override
+    public void teachNewCommand(String newCommand) {
+        String newSkills = getSkills() + newCommand;
+        setSkills(newSkills);
+        System.out.println("Теперь собака" + getName() + "умеет " + newCommand);
+    }
+    @Override
+    public void commands() {
+        System.out.println("Собака " + getName() + "знает команды " + getSkills());
     }
 }
