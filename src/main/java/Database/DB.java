@@ -1,3 +1,5 @@
+package Database;
+
 import Animals.Animal;
 import Animals.*;
 
@@ -6,10 +8,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class DB {
     private final List<Animal>animals;
-    private static final String FILE_PATH = "db.txt";
+    private static final String FILE_PATH = "Database/db.txt";
 
     public DB() {
         animals = new ArrayList<>();
@@ -77,6 +80,21 @@ public class DB {
             System.out.println("Данные загружены");
         } catch (IOException e) {
             System.out.println("Ошибка при попытке прочтения данных: " + e.getMessage());
+        }
+    }
+    public void allAnimals() {
+        try {
+            File file = new File(FILE_PATH);
+            Scanner fileScanner = new Scanner(file);
+
+            while (fileScanner.hasNextLine()) {
+                String animalData = fileScanner.nextLine();
+                System.out.println(animalData);
+            }
+
+            fileScanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Файл с данными не найден.");
         }
     }
     private void dbSave(){
