@@ -1,8 +1,8 @@
 package Animals;
 
 public class Donkey extends Animal{
-    public Donkey(String name, String command, String type) {
-        super(name, command, "Вьючное животное");
+    public Donkey(String name, String skills, String type) {
+        super(name, skills, "Вьючное животное");
     }
 
     @Override
