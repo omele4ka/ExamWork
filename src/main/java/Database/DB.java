@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class DB {
     private final List<Animal>animals;
-    private static final String FILE_PATH = "Database/db.txt";
+    private static final String FILE_PATH = "src\\main\\java\\Database\\db.txt";
 
     public DB() {
         animals = new ArrayList<>();
@@ -99,12 +99,12 @@ public class DB {
     }
     private void dbSave(){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, StandardCharsets.UTF_8))){
-            for (Animal animal:animals) {
+            for (Animal animal : animals) {
                 String className = animal.getClass().getSimpleName();
                 String name = animal.getName();
                 String skills = animal.getSkills().replaceAll(",\\s+", ",");
 
-                String line = className + "," + name + "," + skills;
+                String line = className + ", " + name + ", " + skills;
                 writer.write(line);
                 writer.newLine();
             }

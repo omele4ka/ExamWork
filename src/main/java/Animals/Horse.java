@@ -9,10 +9,10 @@ public class Horse extends Animal{
     public void teachNewCommand(String newCommand) {
         String newSkills = getSkills() + newCommand;
         setSkills(newSkills);
-        System.out.println("Теперь лошадь" + getName() + "умеет " + newCommand);
+        System.out.println("Теперь лошадь" + getName() + " " + "умеет " + " " + newCommand);
     }
     @Override
     public void commands() {
-        System.out.println("лошадь " + getName() + "знает команды " + getSkills());
+        System.out.println("лошадь " + " "  + getName() + " " + "знает команды:" + " " + getSkills());
     }
 }

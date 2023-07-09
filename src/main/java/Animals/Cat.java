@@ -10,10 +10,10 @@ public class Cat extends Animal {
     public void teachNewCommand(String newCommand) {
         String newSkills = getSkills() + newCommand;
         setSkills(newSkills);
-        System.out.println("Теперь кот" + getName() + "умеет " + newCommand);
+        System.out.println("Теперь кот " + " " + getName() + " " + "умеет " + " " + newCommand);
     }
     @Override
     public void commands() {
-        System.out.println("Кот " + getName() + "знает команды " + getSkills());
+        System.out.println("Кот " + " " + getName() + " " + "знает команды " + " " + getSkills());
     }
 }

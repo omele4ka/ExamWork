@@ -1,3 +1,5 @@
+package ProgramMenu;
+
 import Animals.Animal;
 import Animals.*;
 import Database.DB;
@@ -40,7 +42,7 @@ public class Menu {
                     default -> System.out.println("Неверный ввод. Попробуйте снова");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Неверный вводю Попробуйте снова");
+                System.out.println("Неверный ввод. Попробуйте снова");
                 scanner.nextLine();
             }
         }
@@ -61,16 +63,16 @@ public class Menu {
         int animalClass = scanner.nextInt();
         scanner.nextLine();
 
-        Animal animal = null;
+        Animal animal;
         switch (animalClass){
-            case 1 -> new Cat(name, skills, "Домашнее животное");
-            case 2 -> new Dog(name, skills, "Домашнее животное");
-            case 3 -> new Hamster(name, skills, "Домашнее животное");
-            case 4 -> new Horse(name, skills, "Вьючное животное");
-            case 5 -> new Camel(name, skills, "Вьючное животное");
-            case 6 -> new Donkey(name, skills, "Вьючное животное");
+            case 1 -> animal = new Cat(name, skills, "Домашнее животное");
+            case 2 -> animal = new Dog(name, skills, "Домашнее животное");
+            case 3 -> animal = new Hamster(name, skills, "Домашнее животное");
+            case 4 -> animal = new Horse(name, skills, "Вьючное животное");
+            case 5 -> animal = new Camel(name, skills, "Вьючное животное");
+            case 6 -> animal = new Donkey(name, skills, "Вьючное животное");
             default -> {
-                System.out.println("Ошибка: неверный ввод. Попробуйте снова.");
+                System.out.println("Неверный ввод. Попробуйте снова.");
                 return;
             }
         }
